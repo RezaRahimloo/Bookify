@@ -74,8 +74,8 @@ namespace Bookify.Application.Apartments.SearchApartments
                     ActiveBookingStatuses
                 },
                 splitOn: "Country");
-
-            return apartments.ToList();
+            var result = Result.Success((IReadOnlyList<ApartmentResponse>)apartments.ToList());
+            return result;
         }
     }
 }
